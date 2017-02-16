@@ -6,11 +6,8 @@
   crossorigin="anonymous"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+
 <script>
-
-
-
-
 $().ready(function(){
     $("#commentForm").validate();
 }
@@ -18,22 +15,78 @@ $().ready(function(){
 </script>
 
 
+ <script>     
+
+/* document.querySelector("input").addEventListener("keypress", function (evt) {
+    if (evt.which < 48 || evt.which > 57)
+    {
+        evt.preventDefault();
+       
+    }
+});      */
+
+
+            function phoneno(){          
+            $('#phone').keypress(function(e)
+          {
+                var a = [];
+                var k = e.which;
+
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                
+                    e.preventDefault();
+                   
+                  });
+        }  
+       </script>
+
+<script>
+/*document.querySelector("input").addEventListener("keypress", function (address) {
+if (!address.contains("@") || !address.contains("."))
+{
+  address.preventDefault();
+}});               */
+</script>
+<script>
+            function sub(){
+ 
+ //if((cname!= " ") && (cphone!=" ") && (ccomment!=" ") && (curl!=" ") && (cemail!=" "))
+ {
+              $("submit").click(alert("submitted"));
+ }
+
+            }
+</script>
+
 </head>
 <body style="background-color:pink">
 
-<form class="cmxform" id="commentForm" method="get" action="">
+<form class="cmxform" id="commentForm" method="post" action="">
   <fieldset>
     <legend>Please provide your name, email address (won't be published) and a comment</legend>
     <p>
       <label for="cname">Name (required, at least 2 characters)</label>
       <input id="cname" name="name" minlength="2" type="text" required>
     </p>
+
+<p>
+      <label for="cphone">Phone no (required, at least 10 numbers)</label>
+           <input type="text" id="phone" name="phone"  minlength="10" maxlength="10" required>
+
+
+
+
+    </p>
+
     <p>
       <label for="cemail">E-Mail (required)</label>
       <input id="cemail" type="email" name="email" required>
     </p>
     <p>
-      <label for="curl">URL (optional)</label>
+      <label for="curl">URL</label>
       <input id="curl" type="url" name="url" required>
     </p>
     <p>
@@ -41,7 +94,7 @@ $().ready(function(){
       <textarea id="ccomment" name="comment" required></textarea>
     </p>
     <p>
-      <input class="submit" type="submit" value="Submit">
+      <input class="submit" type="submit" value="Submit" onclick="sub()">
     </p>
   </fieldset>
 </form>
