@@ -10,7 +10,7 @@
   
   Last name:	<input type="text" name="lastname" required>
 
-  Email Id:	<input type="email" name="mail" required>
+  Email Id:	<input type="email" name="mail">
 
   Gender:		<input type="radio" name="gender" value="male" checked> Male   <input type="radio" name="gender" value="female"> Female  <input type="radio" name="gender" value="other"> Other
 
