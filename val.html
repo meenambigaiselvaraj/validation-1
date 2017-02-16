@@ -1,0 +1,39 @@
+<html>
+<head><title>reg</title>
+
+<script>
+
+
+
+
+$().ready(function(){
+    $("#formz").validate({
+
+       rules:
+        f : "required",
+        l : "required",
+       messages:
+        f : "enter fname",
+        l : "enter lname"
+
+    })
+}
+)
+</script>
+
+</head>
+<body style="background-color:pink">
+
+<form name=form1 id=formz method="post">
+<pre>
+<h1 align=center style=color:blue>CLUSTREX DATA PRIVATE LIMITED</h1>
+  First name:	<input type="text" id=f name="firstname">
+  <br>
+  Last name:	<input type="text" id=l name="lastname">
+
+<br><br>
+ <input type="submit" value="Submit">
+ </pre>
+ </form>
+ </body>
+</html>
