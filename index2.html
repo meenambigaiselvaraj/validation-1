@@ -1,0 +1,114 @@
+<html>
+<head><title>reg</title>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+
+<script>
+
+// Wait for the DOM to be ready
+$(function() {
+  // Initialize form validation on the registration form.
+  // It has the name attribute "registration"
+  $("#commentForm").validate({
+    // Specify validation rules
+
+    onkeyup: false,
+        errorClass: "req_mess",
+        ignore: ":hidden",
+
+    rules: {
+      // The key name on the left side is the name attribute
+      // of an input field. Validation rules are defined
+      // on the right side
+      firstname: "required",
+      //   lastname: "required",
+      email: {
+        required: true,
+        // Specify that email should be validated
+        // by the built-in "email" rule
+        email: true
+      },
+
+      phone: {
+                required: true,
+                minlength: 10,
+                phoneUS: true
+            },
+     
+      password: {
+        required: true,
+        minlength: 5
+      }
+    },
+    // Specify validation error messages
+    messages: {
+      firstname: "Please enter your firstname",
+      password: {
+        required: "Please provide a passwordmfjgkjhfjkghjf",
+        minlength: "Your password must be at least 5 characters long"
+      },
+
+       phone: {
+                required: "Please enter your phone number",
+                phoneUS: "Please enter a valid phone number: (e.g. 19999999999 or 9999999999)",
+                minlength: "must have 10 digit"
+            },
+      
+      email: { 
+        required: "please enter email",
+         email: "Please enter a valid email address"
+    },
+    // Make sure the form is submitted to the destination defined
+    // in the "action" attribute of the form when valid
+    submitHandler: function(form) {
+      form.submit();
+    }
+  }});
+});
+
+
+    </script>
+
+
+          
+</head>
+<body style="background-color:pink">
+
+<form class="cmxform" id="commentForm" method="post" action="">
+  <fieldset>
+    <legend>Please provide your name, email address (won't be published) and a comment</legend>
+    
+    <p>
+      <label for="cname">Name (required, at least 2 characters)</label>
+      <input id="cname" name="firstname" minlength="2" type="text">
+    </p>
+
+    <p>
+      <label for="phone">Phone number (required 10 numbers)</label>
+      <input id="phone" name="phone" type="text" required>
+    </p>
+
+<p>
+      <label for="password">Password (required, at least 5 characters)</label>
+           <input type="password" id="password" name="password" minlength="5">
+
+
+
+
+    </p>
+
+    <p>
+      <label for="cemail">E-Mail (required)</label>
+      <input id="cemail" type="email" name="email">
+    </p>
+    <p>
+      <input class="submit" type="submit" value="Submit">
+    </p>
+  </fieldset>
+</form>
+ </body>
+</html>
